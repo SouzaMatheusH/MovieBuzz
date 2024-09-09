@@ -1,0 +1,114 @@
+/* Div Principal*/
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 10em;
+  background-color: #0F0F0F;
+  
+  color: #FFFFFF;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Texto principal */
+.main_title h1 {
+  font-size: 3.5em;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+
+.title {
+  font-size: 10em;
+}
+
+.main_title {
+  width: 46.5em;
+}
+
+.sub_title {
+  font-size: 30px;
+}
+
+.sub_title p {
+  font-size: 15px;
+}
+
+.skip_section {
+  width: 100%;
+  display: flex;
+  border: none;
+
+  display: flex;
+  align-items: center;
+}
+
+.skip_section hr {
+  width: 38em;
+  border: none;
+  border-top: 3px dashed #4D4D4D;
+}
+
+.skip_box {
+  width: 8em;
+  margin-right: 5px;
+  padding: 1em;
+  border: 2px solid #FFFFFF;
+}
+
+/* Div do formulário */
+.form_container {
+  width: 21em;
+  height: 30em;
+
+  border-radius: 15px;
+  padding: 3em;
+  border: 1px solid #FFFFFF;
+  backdrop-filter: blur(20px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  z-index: 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Primeiro circulo acima */
+.fcircle {
+  left: 54%;
+  top: 10%;
+  width: 250px;
+  height: 250px;
+  border-radius: 100em;
+  position: absolute;
+
+  background: linear-gradient(to bottom, #530061,#0D0A30 70%);
+
+  z-index: 0;
+}
+
+/* Segundo circulo abaixo */
+.scircle {
+  left: 80%;
+  top: 68%;
+  width: 200px;
+  height: 200px;
+  border-radius: 100em;
+  position: absolute;
+
+  background: linear-gradient(to bottom, #530061,#0D0A30 70%);
+
+  z-index: 0;
+}
+
+.go_reg {
+  font-size: 15px;
+}

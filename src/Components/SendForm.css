@@ -1,0 +1,41 @@
+/* Login Send Form Button */
+.purple_btn {
+  width: 100%;
+  height: 3em;
+  padding: 0.6em;
+  color: #FFFFFF;
+  border: none;
+
+  border-radius: 10px;
+
+  background: linear-gradient(to right, #628EFF, #8740CD, #580475 100%);
+  transition: 0.4s;
+}
+
+.purple_btn:hover {
+  cursor: pointer;
+}
+
+/* Register Send Form Button */
+.blue_btn {
+  width: 100%;
+  height: 3em;
+  padding: 0.6em;
+  color: #FFFFFF;
+  border: none;
+
+  border-radius: 10px;
+
+  background: linear-gradient(to right, #628EFF, #8740CD, #580475 100%);
+  transition: 0.4s;
+}
+
+.blue_btn:hover {
+  cursor: pointer;
+}
+
+
+
+/*628EFF
+8740CD
+580475*/
