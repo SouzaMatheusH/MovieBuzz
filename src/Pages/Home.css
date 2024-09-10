@@ -1,0 +1,79 @@
+/* NavBar */
+.nav_container {
+  width: 100vw;
+  height: 5em;
+  padding: 1em;
+  color: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  z-index: 10;
+}
+
+.icon {
+  margin: 10px;
+  font-size: 25px;
+  z-index: 11;
+}
+
+.icon:hover {
+  cursor: pointer;
+  z-index: 11;
+}
+
+/* Banner */
+.header_container {
+  width: 100vw;
+  height: 50vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  box-shadow: 0px 0px 100em black;
+  
+  z-index: 1;
+}
+
+.header_container img {
+  width: 100%;
+  height: 50vh;
+
+  z-index: 1;
+}
+
+/* Catalogo de Filmes */
+.catalogo {
+  width: 100vw;
+  height: 100vh;
+  padding: 5em;
+  color: #FFFFFF;
+  top: 50vh;
+  position: absolute;
+  background: linear-gradient(to top, #1F222F, #1B1E2C 98%);
+  
+  z-index: 0;
+}
+
+/* Carrossel */
+.carrossel_container {
+  width: 100%;
+}
+
+.session_title {
+  font-size: 40px;
+  margin-bottom: 0.5em;
+}
+
+.movie_card {
+  width: 100%;
+}
+
+.movie_image {
+  width: 100%;
+}
+
+.legend {
+  font-family: 'Tw Cen MT', sans-serif;
+  font-size: 25px;
+}

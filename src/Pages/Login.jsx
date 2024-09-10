@@ -11,8 +11,17 @@ import React from 'react'
 import SendForm from '../Components/SendForm';
 
 const Login = () => {
+  var alerted = localStorage.getItem('alerted') || '';
+  if (alerted != 'yes') {
+   alert("Aviso: este projeto ainda está em processo de desenvolvimento. Páginas podem estar incompletas e funções podem não estar funcionando. O objetivo é exibir um processo de desenvolvimento e estudos!");
+   localStorage.setItem('alerted','yes');
+  }
+
+
   return (
+    
     <div className="container">
+      
       <div className="main_title">
         <h1 className="title">Bem-vindo de volta .!</h1>
 
