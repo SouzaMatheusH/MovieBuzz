@@ -8,6 +8,7 @@ import Home from './Pages/Home'
 import Movie from './Pages/Movie'
 
 import './App.css'
+import NavBar from './Components/NavBar';
 
 function App() {
 

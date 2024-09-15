@@ -11,6 +11,7 @@ import {
 // Components Import
 import MovieCard from "../Components/MovieCard";
 import ReviewCard from "../Components/ReviewCard";
+import NavBar from "../Components/NavBar";
 
 import "./Movie.css";
 
@@ -50,45 +51,48 @@ const Movie = () => {
   }, []);
 
   return (
-    <div className="movie-page">
-      {movie && (
-        <>
-          <img src={imageUrl + movie.poster_path} alt={movie.title} />
-          <p className="tagline">{movie.tagline}</p>
-          <div className="info">
-            <h3>
-              <BsWallet2 /> Orçamento:
-            </h3>
-            <p>{formatCurrency(movie.budget)}</p>
-          </div>
-          <div className="info">
-            <h3>
-              <BsGraphUp /> Receita:
-            </h3>
-            <p>{formatCurrency(movie.revenue)}</p>
-          </div>
-          <div className="info">
-            <h3>
-              <BsHourglassSplit /> Duração:
-            </h3>
-            <p>{movie.runtime} minutos</p>
-          </div>
-          <div className="info description">
-            <h3>
-              <BsFillFileEarmarkTextFill /> Descrição:
-            </h3>
-            <p>{movie.overview}</p>
-          </div>
-        </>
-      )}
+    <>
+      <NavBar/>
+      <div className="movie-page">
+        {movie && (
+          <>
+            <img src={imageUrl + movie.poster_path} alt={movie.title} />
+            <p className="tagline">{movie.tagline}</p>
+            <div className="info">
+              <h3>
+                <BsWallet2 className="desc-icon"/> Orçamento:
+              </h3>
+              <p>{formatCurrency(movie.budget)}</p>
+            </div>
+            <div className="info">
+              <h3>
+                <BsGraphUp className="desc-icon" /> Receita:
+              </h3>
+              <p>{formatCurrency(movie.revenue)}</p>
+            </div>
+            <div className="info">
+              <h3>
+                <BsHourglassSplit className="desc-icon" /> Duração:
+              </h3>
+              <p>{movie.runtime} minutos</p>
+            </div>
+            <div className="info description">
+              <h3>
+                <BsFillFileEarmarkTextFill className="desc-icon" /> Descrição:
+              </h3>
+              <p>{movie.overview}</p>
+            </div>
+          </>
+        )}
 
-      <div className="movie-reviews">
-        <h2>Análises de Usuários:</h2>
-        { reviews && reviews.map((review) => (
-          <ReviewCard review={review} key={review.id}/>
-        ))}
+        <div className="movie-reviews">
+          <h2>Análises de Usuários:</h2>
+          { reviews && reviews.map((review) => (
+            <ReviewCard review={review} key={review.id}/>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

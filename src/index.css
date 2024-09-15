@@ -9,3 +9,7 @@
 body {
   background: linear-gradient(to top, #1F222F, #1B1E2C 98%);
 }
+
+body html {
+  width: 100vw;
+}

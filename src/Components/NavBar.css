@@ -1,0 +1,30 @@
+/* NavBar */
+.nav_container {
+  width: 100%;
+  height: 5em;
+  padding: 1em;
+  color: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  z-index: 10;
+}
+
+.link {
+  text-decoration: none;
+  color: #FFFFFF;
+  z-index: 11;
+}
+
+.icon {
+  margin: 10px;
+  font-size: 25px;
+  z-index: 11;
+}
+
+.icon:hover {
+  cursor: pointer;
+  z-index: 11;
+}
