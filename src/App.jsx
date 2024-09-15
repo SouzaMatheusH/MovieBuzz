@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 import Home from './Pages/Home'
+import Movie from './Pages/Movie'
 
 import './App.css'
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Login/>}></Route>
         <Route path='/Register' element={<Register/>}></Route>
         <Route path='/Home' element={<Home/>}/>
+        <Route path='/moviedesc/:id' element={<Movie/>}/>
       </Routes>
     </Router>
   )

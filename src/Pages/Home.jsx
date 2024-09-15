@@ -1,50 +1,30 @@
-// Hooks Import
-import { useState, useEffect } from 'react';
+// React Imports
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-// Icons Import
-import { CiSettings, CiHome, CiSearch, } from 'react-icons/ci';
+// Icon Imports
+import { CiSettings, CiHome, CiSearch } from 'react-icons/ci';
 import { CgProfile } from "react-icons/cg";
 
-// Carousel Import
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-
-// Styles Import
+// CSS Imports
 import './Home.css';
 
-// Carousel Style define
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
-
-// Test Image Import
+// Assets Import
 import testimage from '../assets/images.jpeg';
-const imagesURL = import.meta.env.VITE_IMG;
+
+// Components Import
+import MovieCard from '../Components/MovieCard';
+
+// Carousel Import
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
-import React from 'react'
+const moviesURL = import.meta.env.VITE_API;
+const apiKey = import.meta.env.VITE_API_KEY;
 
 const Home = () => {
-
-  const moviesURL = import.meta.env.VITE_API;
-  const apiKey = import.meta.env.VITE_API_KEY;
-
   const [topMovies, setTopMovies] = useState([]);
 
   const getTopRatedMovies = async (url) => {
@@ -55,9 +35,18 @@ const Home = () => {
 
   useEffect(() => {
     const topRatedUrl = `${moviesURL}top_rated?${apiKey}`;
-    console.log(topRatedUrl);
     getTopRatedMovies(topRatedUrl);
   }, []);
+
+
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    speed: 500
+  };
 
   return (
     <>
@@ -74,17 +63,15 @@ const Home = () => {
 
       <div className='catalogo'>
         <h1 className='session_title'>Melhores Avaliados:</h1>
-        <Carousel className='carrossel_container' responsive={responsive}>
-          {topMovies.length > 0 && topMovies.map((movie) => 
-            <div className='movie_card'>
-              <img className='movie_image' src={imagesURL + movie.backdrop_path} />
-              <p className="legend">{movie.title}</p>
-            </div>
-          )}
-        </Carousel>
+        {topMovies.length === 0 && <p>Loading...</p>}
+          <Slider {...settings}>
+            {topMovies.length > 0 && topMovies.map((movie) => (
+              <MovieCard movie={movie} key={movie.id}/>
+            ))}
+          </Slider>
       </div>
     </>
   )
 }
 
-export default Home
+export default Home;
