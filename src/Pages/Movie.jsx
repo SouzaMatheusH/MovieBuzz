@@ -8,7 +8,9 @@ import {
   BsFillFileEarmarkTextFill,
 } from "react-icons/bs";
 
+// Components Import
 import MovieCard from "../Components/MovieCard";
+import ReviewCard from "../Components/ReviewCard";
 
 import "./Movie.css";
 
@@ -19,11 +21,18 @@ const imageUrl = import.meta.env.VITE_IMG;
 const Movie = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const [reviews, setReviews] = useState(null);
 
   const getMovie = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setMovie(data);
+  };
+
+  const getReview = async (url) => {
+    const res = await fetch(url);
+    const data = await res.json();
+    setReviews(data.results);
   };
 
   const formatCurrency = (number) => {
@@ -35,7 +44,9 @@ const Movie = () => {
 
   useEffect(() => {
     const movieUrl = `${moviesURL}${id}?${apiKey}`;
+    const reviewUrl = `${moviesURL}${id}/reviews?${apiKey}`;
     getMovie(movieUrl);
+    getReview(reviewUrl);
   }, []);
 
   return (
@@ -70,6 +81,13 @@ const Movie = () => {
           </div>
         </>
       )}
+
+      <div className="movie-reviews">
+        <h2>Análises de Usuários:</h2>
+        { reviews && reviews.map((review) => (
+          <ReviewCard review={review} key={review.id}/>
+        ))}
+      </div>
     </div>
   );
 };
