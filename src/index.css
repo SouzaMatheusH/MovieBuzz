@@ -8,8 +8,11 @@
 
 body {
   background: linear-gradient(to top, #1F222F, #1B1E2C 98%);
+  z-index: 1;
 }
 
-body html {
-  width: 100vw;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

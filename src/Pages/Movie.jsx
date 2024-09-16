@@ -9,7 +9,6 @@ import {
 } from "react-icons/bs";
 
 // Components Import
-import MovieCard from "../Components/MovieCard";
 import ReviewCard from "../Components/ReviewCard";
 import NavBar from "../Components/NavBar";
 
@@ -51,7 +50,7 @@ const Movie = () => {
   }, []);
 
   return (
-    <>
+    <div className="movie">
       <NavBar/>
       <div className="movie-page">
         {movie && (
@@ -92,7 +91,7 @@ const Movie = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
